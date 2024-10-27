@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="/PJ1/public/style.css">
+<title>ACL Example</title>
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="Home" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="login" class="nav-link px-2 text-secondary">เพิ่มข้อมูลนักศึกษา</a></li>
+                    <li><a href="std" class="nav-link px-2 text-secondary">ข้อมูลนักศึกษา</a></li>
+                    <li><a href="check" class="nav-link px-2 text-secondary">เช็คชื่อ</a></li>
+                </ul>
+                <div class="text-end">
+                    <a href="/logout" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="bg-dark py-5" bis_size="{&quot;x&quot;:0,&quot;y&quot;:56,&quot;w&quot;:1400,&quot;h&quot;:584,&quot;abs_x&quot;:0,&quot;abs_y&quot;:119}">
+        <div class="container px-5" bis_size="{&quot;x&quot;:40,&quot;y&quot;:104,&quot;w&quot;:1320,&quot;h&quot;:488,&quot;abs_x&quot;:40,&quot;abs_y&quot;:167}">
+            <div class="row gx-5 align-items-center justify-content-center" bis_size="{&quot;x&quot;:64,&quot;y&quot;:104,&quot;w&quot;:1272,&quot;h&quot;:488,&quot;abs_x&quot;:64,&quot;abs_y&quot;:167}">
+                <div class="col-lg-8 col-xl-7 col-xxl-6" bis_size="{&quot;x&quot;:64,&quot;y&quot;:157,&quot;w&quot;:636,&quot;h&quot;:381,&quot;abs_x&quot;:64,&quot;abs_y&quot;:220}">
+                    <div class="my-5 text-center text-xl-start" bis_size="{&quot;x&quot;:88,&quot;y&quot;:205,&quot;w&quot;:588,&quot;h&quot;:285,&quot;abs_x&quot;:88,&quot;abs_y&quot;:268}">
+                        <h1 class="display-5 fw-bolder text-white mb-2" bis_size="{&quot;x&quot;:88,&quot;y&quot;:205,&quot;w&quot;:588,&quot;h&quot;:115,&quot;abs_x&quot;:88,&quot;abs_y&quot;:268}">A Bootstrap 5 template for modern businesses</h1>
+                        <p class="lead fw-normal text-white-50 mb-4" bis_size="{&quot;x&quot;:88,&quot;y&quot;:328,&quot;w&quot;:588,&quot;h&quot;:90,&quot;abs_x&quot;:88,&quot;abs_y&quot;:391}">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start" bis_size="{&quot;x&quot;:88,&quot;y&quot;:442,&quot;w&quot;:588,&quot;h&quot;:48,&quot;abs_x&quot;:88,&quot;abs_y&quot;:505}">
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features" bis_size="{&quot;x&quot;:88,&quot;y&quot;:442,&quot;w&quot;:149,&quot;h&quot;:48,&quot;abs_x&quot;:88,&quot;abs_y&quot;:505}">Get Started</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="#!" bis_size="{&quot;x&quot;:269,&quot;y&quot;:442,&quot;w&quot;:150,&quot;h&quot;:48,&quot;abs_x&quot;:269,&quot;abs_y&quot;:505}">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center" bis_size="{&quot;x&quot;:700,&quot;y&quot;:104,&quot;w&quot;:636,&quot;h&quot;:488,&quot;abs_x&quot;:700,&quot;abs_y&quot;:167}"><img class="img-fluid rounded-3 my-5" src="/bg.jpg" alt="..." bis_size="{&quot;x&quot;:724,&quot;y&quot;:152,&quot;w&quot;:588,&quot;h&quot;:392,&quot;abs_x&quot;:724,&quot;abs_y&quot;:215}"></div>
+            </div>
+        </div>
+    </header>
+
+<div class="container">
+    <h1>รายชื่อนักศึกษา</h1>
+  
+    <!-- ฟอร์มค้นหานักเรียน -->
+    <form action="/std" method="GET" class="mb-3">
+      <div class="input-group">
+        <input type="text" name="search" class="form-control" placeholder="ค้นหานักเรียน..." aria-label="ค้นหานักเรียน..." />
+        <button class="btn btn-outline-secondary" type="submit">ค้นหา</button>
+      </div>
+    </form>
+  
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Curriculum</th>
+                    <th>Email</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% students.forEach(student => { %>
+                    <tr>
+                        <td><%= student.id %></td>
+                        <td><%= student.first_name %></td>
+                        <td><%= student.last_name %></td>
+                        <td><%= student.curriculum %></td>
+                        <td><%= student.email %></td>
+                        <td><input type="radio" name="status_<%= student.id %>" value="P">มา</td>
+                        <td><input type="radio" name="status_<%= student.id %>" value="N">ไม่มา</td>
+                        <td>
+                            <!-- ปุ่มอัพเดต -->
+                            <a href="/edit/<%= student.id %>" class="btn btn-primary btn-sm">อัพเดต</a>
+                        </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <button type="submit">บันทึก</button>
+        </form>
+</body>
+</html>
